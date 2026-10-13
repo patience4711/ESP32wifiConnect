@@ -9,17 +9,17 @@ should match with the ip of your router. This is handy when you want to hide the
 when you are outside your own home network.
 
 How to use it:
-you need to have 'preferences' as the data is saved in flash
+you need to have 'preferences' as the data is saved in flash.<br>
 
-copy the zip to your sketchbook/libraries
-in arduino IDE 'include library'-> 'add zip library'
-in your program in the global part before setup add:
-  #include <wifiConnect.h>
-  wifiConnect my_wifiConnect;
-in setup: my_wifiConnect.start_wifi();
+copy the zip to your sketchbook/libraries<br>
+in arduino IDE 'include library'-> 'add zip library'<br>
+in your program in the global part before setup add:<br>
+  #include <wifiConnect.h><br>
+  wifiConnect my_wifiConnect;<br>
+in setup: my_wifiConnect.start_wifi();<br>
 
 if you want to read the admin passwd and security level you need something like:<br>
-void readAdminPasswd()
+void readAdminPasswd()<br>
 {<br>
   prefs.begin("wifi_conf", true);<br>
   String temp = prefs.getString("pswd", "0000");<br>
