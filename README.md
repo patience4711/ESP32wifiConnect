@@ -18,13 +18,13 @@ in your program in the global part before setup add:
   wifiConnect my_wifiConnect;
 in setup: my_wifiConnect.start_wifi();
 
-if you want to read the admin passwd and security level you need something like
+if you want to read the admin passwd and security level you need something like:<br>
 void readAdminPasswd()
-{
-  prefs.begin("wifi_conf", true);
-  String temp = prefs.getString("pswd", "0000");
-  strncpy(pswd, temp.c_str(), sizeof(pswd) - 1);
-  pswd[sizeof(pswd) - 1] = '\0'; // null-terminator  
-  securityLevel  = prefs.getInt("seclvl", 6);
-  prefs.end();
-}
+{<br>
+  prefs.begin("wifi_conf", true);<br>
+  String temp = prefs.getString("pswd", "0000");<br>
+  strncpy(pswd, temp.c_str(), sizeof(pswd) - 1);<br>
+  pswd[sizeof(pswd) - 1] = '\0'; // null-terminator <br> 
+  securityLevel  = prefs.getInt("seclvl", 6);<br>
+  prefs.end();<br>
+}<br>
