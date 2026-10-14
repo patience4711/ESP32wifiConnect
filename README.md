@@ -23,7 +23,7 @@ in arduino IDE 'include library' -> 'add zip library'<br>
 in your program in the global part above setup add:<br>
   - #include <wifiConnect.h><br>
   - wifiConnect my_wifiConnect;<br>
-in setup: my_wifiConnect.start_wifi();<br>
+  - in setup: my_wifiConnect.start_wifi();<br>
 
 if you want use the admin passwd and/or security level you have to read it into your program,<br>
 you need something like this reading function:<br>
