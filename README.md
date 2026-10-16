@@ -3,10 +3,12 @@ A very simple and lightweighted library to connect your ESP32 to your homenetwor
 Tested with the C3, C6 and esp32-dev.
 
 features:
+- takes care for the wifi connection at boot
+- when it cannot connect, it opens a captive portal where you can provide the wifi credentials.
 - very small footprint
-- it tells you the ip when the connection is made.
+- it tells you the ip-address when the connection is made.
 - ledsignals inform you about state and progress.
-- You inherited some methods to control the onboard led.
+- You inherit a few methods to control the onboard led.
   
 There also an option to set an admin password so that your webui can be secured.
 Another saved value is security level. This can be used to determin how many characters
@@ -47,7 +49,7 @@ Furthermore you need something like this reading function:<br>
 }<br>
 </strong>
 ### inherited methods
-These methods work, nomatter the esp32 model you use:<br>
+These methods work, no matter the esp32 model you use:<br>
 - my_wifiConnect.ledOn(r,g,b);
 - my_wifiConnect.ledOff();
 - my_wifiConnect.ledBlink(r,g,b, number, time);
