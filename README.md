@@ -1,4 +1,4 @@
-# Simple-Wifi-Connect-ESP32C3-C6
+# Simple-Wifi-Connect-ESP32
 A very simple and lightweighted library to connect your ESP32 to your homenetwork (wifi).<br>
 Tested with the C3, C6 and esp32-dev.
 
