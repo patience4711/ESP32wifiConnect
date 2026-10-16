@@ -1,8 +1,13 @@
 # Simple-Wifi-Connect-ESP32C3-C6
-very simple and lightweighted library to connect your ESP32c3 or esp32c6 to your homenetwork (wifi)
+A very simple and lightweighted library to connect your ESP32 to your homenetwork (wifi).<br>
+Tested with the C3, C6 and esp32-dev.
 
-The nice thing about it is that is tells you the ip when the connection is made.
-
+features:
+- very small footprint
+- it tells you the ip when the connection is made.
+- ledsignals inform you about state and progress.
+- You inherited some methods to control the onboard led.
+  
 There also an option to set an admin password so that your webui can be secured.
 Another saved value is security level. This can be used to determin how many characters
 should match with the ip of your router. This is handy when you want to hide the menu
@@ -16,8 +21,6 @@ Note down the ip and click the reset button.
 
 
 ### How to install it:<br>
-you need to have 'preferences' as the data is saved in flash.<br>
-
 copy the zip to your sketchbook/libraries<br>
 in arduino IDE 'include library' -> 'add zip library'<br>
 in your program in the global part above setup add:<br>
@@ -26,7 +29,13 @@ in your program in the global part above setup add:<br>
   - in setup: my_wifiConnect.start_wifi();<br>
 
 if you want use the admin passwd and/or security level you have to read it into your program,<br>
-you need something like this reading function:<br>
+You need prferences for that purpose:<br>
+include and instantiate preferences:<br>
+- #include <preferences.h>
+- Preferences prefs;
+- declare char[20] pswd;
+
+Furthermore you need something like this reading function:<br>
 <strong>void readAdminPasswd()<br>
 {<br>
   prefs.begin("wifi_conf", true);<br>
@@ -37,3 +46,12 @@ you need something like this reading function:<br>
   prefs.end();<br>
 }<br>
 </strong>
+### inherited methods
+These methods work, nomatter the esp32 model you use:<br>
+- my_wifiConnect.ledOn(r,g,b);
+- my_wifiConnect.ledOff();
+- my_wifiConnect.ledBlink(r,g,b, number, time);
+
+examples:<br>
+my_wifiConnect.ledBlink(200,0,200, 3, 500); will blink the rgb led (c6) 3 times, 500 msec, on a c3 or -dev the onboard led blinks 3 times 500msec.<br>
+my_wifiConnect.ledOn(0,255,0); The rgb led (C6) goes on, color green, the C3 or -dev onboard led goes on. 
