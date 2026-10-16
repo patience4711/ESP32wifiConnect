@@ -23,8 +23,9 @@ Note down the ip and click the reset button.
 
 
 ### How to install it:<br>
-copy the zip to your sketchbook/libraries<br>
-in arduino IDE 'include library' -> 'add zip library'<br>
+Downlaod the zip file [wifiConnectLib.zip](https://github.com/patience4711/Simple-Wifi-Connect-ESP32C3-C6/blob/main/wifiConnectLib.zip)<br>
+Copy the zip file to your sketchbook/libraries<br>
+in arduino IDE 'include library' -> 'add zip library' and point to sketchbook/libraries/filename.zip<br>
 in your program in the global part above setup add:<br>
   - #include <wifiConnect.h><br>
   - wifiConnect my_wifiConnect;<br>
